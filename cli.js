@@ -13,14 +13,12 @@ program
     });
   });
 
-  program
+program
   .command('clear')
   .description('clear all tasks')
-  .action(function (taskName) {
-    taskName.forEach((task) => {
-      console.log('this is clear');
-    });
-  });
+  .action(() => {
+    api.clear()
+  })
 
 program.parse(process.argv);
 

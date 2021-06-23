@@ -1,8 +1,3 @@
-const homedir = require('os').homedir();
-const home = process.env.HOME || homedir
-const p = require('path')
-const fs = require('fs')
-const dbPath = p.join(home, '.todo')
 const db = require('./db')
 
 module.exports.add = async (title) => {
@@ -12,4 +7,8 @@ module.exports.add = async (title) => {
   list.push({ title, done: false })
   //存储任务到文件
   await db.write(list)
+}
+
+module.exports.clear = async (title) => {
+  await db.write([])
 }
