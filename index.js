@@ -1,3 +1,4 @@
+#!/usr/bin/env.node
 const db = require('./db')
 const inquirer = require('inquirer')
 
